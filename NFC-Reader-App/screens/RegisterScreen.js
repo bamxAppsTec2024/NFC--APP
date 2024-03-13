@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-const Register = () => {
+export default function RegisterScreen({ navigation }) {
+//const Register = () => {
   const data = {
     name: 'Miguel Alejandro',
     lastName: 'Botello Méndez',
@@ -105,4 +106,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Register;
+//export default Register;
