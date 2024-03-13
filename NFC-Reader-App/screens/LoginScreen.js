@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, Alert, StyleSheet, Image, Text, TouchableOpacity,} from 'react-native';
 import {auth} from "../firebaseConfig"
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import Logo from "../assets/Logo.png"
+
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -11,7 +11,6 @@ export default function LoginScreen({ navigation }) {
   const handleLogin = async () => {
     try {
       const response = await signInWithEmailAndPassword(auth,email, password);
-
       console.log('Usuario autenticado:', response.user);
       navigation.navigate('Home');
     } catch (error) {
