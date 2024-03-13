@@ -36,12 +36,10 @@ export default function LoginScreen({ navigation }) {
           autoCapitalize="none"
         />
         <TextInput style={styles.textInputStyled}
-          placeholder="  Contraseña"
+          placeholder="Contraseña"
           value={password}
           onChangeText={setPassword}
-          secureTextEn
-          try
-        />
+          secureTextEntry ={true}   />
 
         <View style={{margin:20}}>
           <TouchableOpacity onPress={handleLogin} style={styles.btnStyled}>
