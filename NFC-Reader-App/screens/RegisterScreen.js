@@ -3,7 +3,8 @@ import { StyleSheet, View, Text } from 'react-native';
 import {doc, getDoc } from "firebase/firestore";
 import { db } from '../firebaseConfig';
 
-export default function RegisterScreen({ navigation }) {
+export default function RegisterScreen({ route, navigation }) {
+  const { NfcId } = route.params;
   const [userData, setUserData] = useState(null);
 
   // Initialize Cloud Firestore and get a reference to the service
@@ -11,7 +12,7 @@ export default function RegisterScreen({ navigation }) {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const docRef = doc(db, "NFC", "ZAPmVCktCaAVtmnhME5J")
+        const docRef = doc(db, "NFC", NfcId)
         const docSnap = await getDoc(docRef)
         
         if(docSnap){
